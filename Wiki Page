@@ -1,0 +1,13 @@
+Zone Control
+
+  This app will be a mobile game where multiple people can play.  The game will display a map and have a capture point someplace on the map.  If the user moves to the point and hits the capture button first they will get a point for capturing the objective.  The game will end after a certain amount of time or after someone captures a certain amount of points
+
+  The first step in making an app like this work is that I will have to establish a client server connection and be able to pass information back and forth easy.
+
+List of Objective
+1. Get iphone to talk host server
+2. GPS location on phone
+3. Displaying map on phone with score box.
+4. Server code for randomly generating a capture point.
+5. Advanced interface for setting up games.
+6. Log in screen.
