@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1413275C16CD506C007B6207 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413275B16CD506C007B6207 /* Target.m */; };
 		14FF226C16CABC6100B2AD72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226B16CABC6100B2AD72 /* UIKit.framework */; };
 		14FF226E16CABC6100B2AD72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226D16CABC6100B2AD72 /* Foundation.framework */; };
 		14FF227016CABC6100B2AD72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226F16CABC6100B2AD72 /* CoreGraphics.framework */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1413275A16CD506C007B6207 /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
+		1413275B16CD506C007B6207 /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
 		14FF226716CABC6100B2AD72 /* Zone Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zone Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FF226B16CABC6100B2AD72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14FF226D16CABC6100B2AD72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				14FF227A16CABC6100B2AD72 /* zonecontrolAppDelegate.h */,
 				14FF227B16CABC6100B2AD72 /* zonecontrolAppDelegate.m */,
 				14FF228316CABC6100B2AD72 /* MainStoryboard.storyboard */,
+				1413275A16CD506C007B6207 /* Target.h */,
+				1413275B16CD506C007B6207 /* Target.m */,
 				14FF228616CABC6100B2AD72 /* zonecontrolFirstViewController.h */,
 				14FF228716CABC6100B2AD72 /* zonecontrolFirstViewController.m */,
 				14FF228916CABC6100B2AD72 /* first.png */,
@@ -203,6 +208,7 @@
 				14FF227C16CABC6100B2AD72 /* zonecontrolAppDelegate.m in Sources */,
 				14FF228816CABC6100B2AD72 /* zonecontrolFirstViewController.m in Sources */,
 				14FF228F16CABC6100B2AD72 /* zonecontrolSecondViewController.m in Sources */,
+				1413275C16CD506C007B6207 /* Target.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +325,7 @@
 				14FF229816CABC6100B2AD72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

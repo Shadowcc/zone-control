@@ -8,6 +8,7 @@
 
 #import "zonecontrolFirstViewController.h"
 #define METERS_PER_MILE 1609.344
+#import "Target.h"
 
 @interface zonecontrolFirstViewController ()
 
@@ -40,17 +41,53 @@
     // 3
     [_mapView setRegion:viewRegion animated:YES];
     
-    //CLLocationCoordinate2D cord;
-    //cord.latitude = 41.987673;
-    //cord.longitude = -91.657144;
-    //NSDictionary *address;
-   // //[address init];
-    //MKPlacemark *place;
-    //[place initWithCoordinate:cord addressDictionary: address];
     
-    //[self.mapView addAnnotation:place];
     
     
     
 }
+- (IBAction)addTargetButtonClick:(UIBarButtonItem *)sender {
+    [self addTargetToMap:[self getTargetFromServer]];
+}
+- (IBAction)captureTargetButtonClick:(UIBarButtonItem *)sender {
+    [self removeAllAnnotations];
+}
+- (IBAction)pingLocationButtonClick:(UIBarButtonItem *)sender {
+    [self removeAllAnnotations];
+}
+
+-(void)addTargetToMap:(Target*)newTarget{
+    [self removeAllAnnotations];
+    
+    
+    
+    [self.mapView addAnnotation:newTarget];
+
+}
+
+-(void)removeAllAnnotations
+{
+    id userAnnotation = self.mapView.userLocation;
+    
+    NSMutableArray *annotations = [NSMutableArray arrayWithArray:self.mapView.annotations];
+    [annotations removeObject:userAnnotation];
+    
+    [self.mapView removeAnnotations:annotations];
+}
+
+-(Target*)getTargetFromServer
+{
+    CLLocationCoordinate2D cord;
+    cord.latitude = 41.987673;
+    cord.longitude = -91.657144;
+    
+    Target *newTarget = [[Target alloc] initWithTitle:@"Capture Point" andCoordinate:cord];
+    return newTarget;
+}
+
+-(void)confirmTargetFromServer
+{
+    
+}
+
 @end
