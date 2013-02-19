@@ -9,6 +9,7 @@
 #import "zonecontrolFirstViewController.h"
 #define METERS_PER_MILE 1609.344
 #import "Target.h"
+#import "GCDAsyncSocket.h"
 
 @interface zonecontrolFirstViewController ()
 
@@ -87,7 +88,11 @@
 
 -(void)confirmTargetFromServer
 {
+    GCDAsyncSocket *socket;
     
+    socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+    NSError *err = nil;
+    [socket connectToHost:@"192.168.0.1" onPort:80 error:&err];
 }
 
 @end
