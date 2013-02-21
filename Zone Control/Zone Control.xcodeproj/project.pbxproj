@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1413275C16CD506C007B6207 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413275B16CD506C007B6207 /* Target.m */; };
 		14226F2716D3ED6D005C3A36 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */; };
+		145180B616D6946E00C046BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B516D6946E00C046BD /* Security.framework */; };
+		145180B916D6949000C046BD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B816D6949000C046BD /* CFNetwork.framework */; };
 		14FF226C16CABC6100B2AD72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226B16CABC6100B2AD72 /* UIKit.framework */; };
 		14FF226E16CABC6100B2AD72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226D16CABC6100B2AD72 /* Foundation.framework */; };
 		14FF227016CABC6100B2AD72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226F16CABC6100B2AD72 /* CoreGraphics.framework */; };
@@ -33,6 +35,8 @@
 		1413275B16CD506C007B6207 /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
 		14226F2516D3ED6D005C3A36 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		145180B516D6946E00C046BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		145180B816D6949000C046BD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		14FF226716CABC6100B2AD72 /* Zone Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zone Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FF226B16CABC6100B2AD72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14FF226D16CABC6100B2AD72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145180B916D6949000C046BD /* CFNetwork.framework in Frameworks */,
+				145180B616D6946E00C046BD /* Security.framework in Frameworks */,
 				14FF229A16CABDBE00B2AD72 /* MapKit.framework in Frameworks */,
 				14FF226C16CABC6100B2AD72 /* UIKit.framework in Frameworks */,
 				14FF226E16CABC6100B2AD72 /* Foundation.framework in Frameworks */,
@@ -76,7 +82,6 @@
 		14FF225C16CABC6100B2AD72 = {
 			isa = PBXGroup;
 			children = (
-				14FF229916CABDBE00B2AD72 /* MapKit.framework */,
 				14FF227116CABC6100B2AD72 /* Zone Control */,
 				14FF226A16CABC6100B2AD72 /* Frameworks */,
 				14FF226816CABC6100B2AD72 /* Products */,
@@ -94,6 +99,9 @@
 		14FF226A16CABC6100B2AD72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				145180B816D6949000C046BD /* CFNetwork.framework */,
+				145180B516D6946E00C046BD /* Security.framework */,
+				14FF229916CABDBE00B2AD72 /* MapKit.framework */,
 				14FF226B16CABC6100B2AD72 /* UIKit.framework */,
 				14FF226D16CABC6100B2AD72 /* Foundation.framework */,
 				14FF226F16CABC6100B2AD72 /* CoreGraphics.framework */,

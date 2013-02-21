@@ -9,9 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class GCDAsyncSocket;
+
 
 
 @interface zonecontrolFirstViewController : UIViewController
+{
+    GCDAsyncSocket *asyncSocket;
+    
+}
+
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 
 @end

@@ -93,6 +93,19 @@
     socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *err = nil;
     [socket connectToHost:@"192.168.0.1" onPort:80 error:&err];
+    	
+}
+- (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
+{
+    NSLog(@"socket:%p didConnectToHost:%@ port:%hu", sock, host, port);
+    
+    
+    // We're just going to send a test string to the server.
+    
+    NSString *myStr = @"testing...123...\r\n";
+    NSData *myData = [myStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [asyncSocket writeData:myData withTimeout:5.0 tag:0];
 }
 
 @end
