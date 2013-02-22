@@ -15,12 +15,13 @@
 
 @interface zonecontrolFirstViewController : UIViewController
 {
-    GCDAsyncSocket *asyncSocket;
+    //GCDAsyncSocket *asyncSocket;
     
 }
 
-
+@property (strong, nonatomic) GCDAsyncSocket *asyncSocket;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 
 @end
+

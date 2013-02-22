@@ -48,13 +48,13 @@
     
 }
 - (IBAction)addTargetButtonClick:(UIBarButtonItem *)sender {
-    [self addTargetToMap:[self getTargetFromServer]];
+    [self connectToServer];
 }
 - (IBAction)captureTargetButtonClick:(UIBarButtonItem *)sender {
     [self removeAllAnnotations];
 }
 - (IBAction)pingLocationButtonClick:(UIBarButtonItem *)sender {
-    [self removeAllAnnotations];
+    [self connectToServer];
 }
 
 -(void)addTargetToMap:(Target*)newTarget{
@@ -63,9 +63,22 @@
     
     
     [self.mapView addAnnotation:newTarget];
-
+    
 }
-
+-(void)connectToServer
+{
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    
+	_asyncSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:mainQueue];
+    NSLog(@"Made it here");
+    NSError *err = nil;
+    if((![_asyncSocket connectToHost:@"63.152.117.50" onPort:8001 error:&err]))
+    {
+        NSLog(@"Error connecting: %@", err);
+        
+    }
+    [_asyncSocket readDataToData:[GCDAsyncSocket LFData] withTimeout:15 tag:1];
+}
 -(void)removeAllAnnotations
 {
     id userAnnotation = self.mapView.userLocation;
@@ -92,8 +105,9 @@
     
     socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     NSError *err = nil;
-    [socket connectToHost:@"192.168.0.1" onPort:80 error:&err];
-    	
+    [socket connectToHost:@"63.152.117.50" onPort:80 error:&err];
+    
+    
 }
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
@@ -105,7 +119,45 @@
     NSString *myStr = @"testing...123...\r\n";
     NSData *myData = [myStr dataUsingEncoding:NSUTF8StringEncoding];
     
-    [asyncSocket writeData:myData withTimeout:5.0 tag:0];
+    [_asyncSocket writeData:myData withTimeout:5.0 tag:0];
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+	NSLog(@"socket:%p didReadData:withTag:%ld", sock, tag);
+    
+    
+	NSString *httpResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+	NSLog(@"%@", httpResponse);
+    
+    
+    
+    NSArray *chunks = [httpResponse componentsSeparatedByString: @"*"];
+    
+    CLLocationCoordinate2D cord;
+    NSString *lat = chunks[0];
+    NSString *lon = chunks[1];
+    
+    cord.latitude = [lat doubleValue];
+    cord.longitude = [lon doubleValue];
+    
+    Target *newTarget = [[Target alloc] initWithTitle:@"Capture Point" andCoordinate:cord];
+    
+    [self addTargetToMap:newTarget];
+    
+    
+    
+}
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
+	NSLog(@"socketDidDisconnect:%p withError: %@", sock, err);
+	
+}
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+	NSLog(@"socket:%p didWriteDataWithTag:%ld", sock, tag);
 }
 
 @end
+
