@@ -13,11 +13,8 @@
 
 
 
-@interface zonecontrolFirstViewController : UIViewController
-{
-    //GCDAsyncSocket *asyncSocket;
-    
-}
+@interface zonecontrolFirstViewController : UIViewController <MKMapViewDelegate>
+
 
 @property (strong, nonatomic) GCDAsyncSocket *asyncSocket;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

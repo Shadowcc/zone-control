@@ -10,6 +10,8 @@
 #define METERS_PER_MILE 1609.344
 #import "Target.h"
 #import "GCDAsyncSocket.h"
+#import "CustomMapItem.h"
+#import "CustomAnnotationView.h"
 
 @interface zonecontrolFirstViewController ()
 
@@ -48,7 +50,12 @@
     
 }
 - (IBAction)addTargetButtonClick:(UIBarButtonItem *)sender {
-    [self connectToServer];
+    //testing custom annotation
+    
+    //[self connectToServer];
+    
+    [self addTargetToMap:[self getTargetFromServer]];
+    
 }
 - (IBAction)captureTargetButtonClick:(UIBarButtonItem *)sender {
     [self removeAllAnnotations];
@@ -59,10 +66,15 @@
 
 -(void)addTargetToMap:(Target*)newTarget{
     [self removeAllAnnotations];
+    CustomMapItem *item = [[CustomMapItem alloc] init];
+    item.place = @"Tea Garden";
+    item.imageName = @"teagarden";
+    item.latitude = [NSNumber numberWithDouble:41.98763];
+    item.longitude = [NSNumber numberWithDouble:-91.657144];
     
     
-    
-    [self.mapView addAnnotation:newTarget];
+    [self.mapView addAnnotation: item];
+                            
     
 }
 -(void)connectToServer
@@ -75,7 +87,7 @@
     if((![_asyncSocket connectToHost:@"63.152.117.50" onPort:8001 error:&err]))
     {
         NSLog(@"Error connecting: %@", err);
-        
+        	
     }
     [_asyncSocket readDataToData:[GCDAsyncSocket LFData] withTimeout:15 tag:1];
 }
@@ -159,5 +171,28 @@
 	NSLog(@"socket:%p didWriteDataWithTag:%ld", sock, tag);
 }
 
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // in case it's the user location, we already have an annotation, so just return nil
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // handle our three custom annotations
+    //
+        if ([annotation isKindOfClass:[CustomMapItem class]])  // for Japanese Tea Garden
+    {
+        static NSString *TeaGardenAnnotationIdentifier = @"TeaGardenAnnotationIdentifier";
+        
+        CustomAnnotationView *annotationView =
+        (CustomAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:TeaGardenAnnotationIdentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TeaGardenAnnotationIdentifier];
+        }
+        return annotationView;
+    }
+    
+    return nil;
+}
 @end
 

@@ -11,6 +11,9 @@
 		14226F2716D3ED6D005C3A36 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */; };
 		145180B616D6946E00C046BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B516D6946E00C046BD /* Security.framework */; };
 		145180B916D6949000C046BD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B816D6949000C046BD /* CFNetwork.framework */; };
+		14E4B43716DD2F5F00265587 /* CustomMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4B43616DD2F5F00265587 /* CustomMapItem.m */; };
+		14E4B43A16DD2FEE00265587 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */; };
+		14E4B43C16DD30CE00265587 /* teagarden.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E4B43B16DD30CE00265587 /* teagarden.png */; };
 		14FF226C16CABC6100B2AD72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226B16CABC6100B2AD72 /* UIKit.framework */; };
 		14FF226E16CABC6100B2AD72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226D16CABC6100B2AD72 /* Foundation.framework */; };
 		14FF227016CABC6100B2AD72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226F16CABC6100B2AD72 /* CoreGraphics.framework */; };
@@ -37,6 +40,11 @@
 		14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		145180B516D6946E00C046BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		145180B816D6949000C046BD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		14E4B43516DD2F4200265587 /* CustomMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMapItem.h; path = ../../../../Downloads/MapCallouts/Classes/CustomMapItem.h; sourceTree = "<group>"; };
+		14E4B43616DD2F5F00265587 /* CustomMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapItem.m; sourceTree = "<group>"; };
+		14E4B43816DD2FEE00265587 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		14E4B43B16DD30CE00265587 /* teagarden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teagarden.png; sourceTree = "<group>"; };
 		14FF226716CABC6100B2AD72 /* Zone Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zone Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FF226B16CABC6100B2AD72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14FF226D16CABC6100B2AD72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +120,11 @@
 		14FF227116CABC6100B2AD72 /* Zone Control */ = {
 			isa = PBXGroup;
 			children = (
+				14E4B43B16DD30CE00265587 /* teagarden.png */,
+				14E4B43816DD2FEE00265587 /* CustomAnnotationView.h */,
+				14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */,
+				14E4B43616DD2F5F00265587 /* CustomMapItem.m */,
+				14E4B43516DD2F4200265587 /* CustomMapItem.h */,
 				14FF227A16CABC6100B2AD72 /* zonecontrolAppDelegate.h */,
 				14FF227B16CABC6100B2AD72 /* zonecontrolAppDelegate.m */,
 				14FF228316CABC6100B2AD72 /* MainStoryboard.storyboard */,
@@ -207,6 +220,7 @@
 				14FF228C16CABC6100B2AD72 /* first@2x.png in Resources */,
 				14FF229116CABC6100B2AD72 /* second.png in Resources */,
 				14FF229316CABC6100B2AD72 /* second@2x.png in Resources */,
+				14E4B43C16DD30CE00265587 /* teagarden.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +237,8 @@
 				14FF228F16CABC6100B2AD72 /* zonecontrolSecondViewController.m in Sources */,
 				1413275C16CD506C007B6207 /* Target.m in Sources */,
 				14226F2716D3ED6D005C3A36 /* GCDAsyncSocket.m in Sources */,
+				14E4B43716DD2F5F00265587 /* CustomMapItem.m in Sources */,
+				14E4B43A16DD2FEE00265587 /* CustomAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
