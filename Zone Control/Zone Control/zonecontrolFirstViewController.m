@@ -50,11 +50,11 @@
     
 }
 - (IBAction)addTargetButtonClick:(UIBarButtonItem *)sender {
-    //testing custom annotation
     
-    //[self connectToServer];
+    _messageType = @"get";
+    [self connectToServer];
     
-    [self addTargetToMap:[self getTargetFromServer]];
+    
     
 }
 - (IBAction)captureTargetButtonClick:(UIBarButtonItem *)sender {
@@ -129,6 +129,25 @@
     // We're just going to send a test string to the server.
     
     NSString *myStr = @"testing...123...\r\n";
+    
+    if(_messageType == @"get")
+    {
+        myStr = @"user*get\r\n";
+    
+    }
+    if(_messageType == @"confirm")
+    {
+        //need to get user location
+        myStr = [NSString stringWithFormat:@"user*confirm*%@*%@\r\n"];
+    
+    }
+    if(_messageType == @"score")
+    {
+        myStr = @"user*score\r\n";
+        
+    }
+    
+    
     NSData *myData = [myStr dataUsingEncoding:NSUTF8StringEncoding];
     
     [_asyncSocket writeData:myData withTimeout:5.0 tag:0];
@@ -147,6 +166,19 @@
     
     NSArray *chunks = [httpResponse componentsSeparatedByString: @"*"];
     
+    if(chunks[0] == @"confirm")
+    {
+        
+    }
+    if(chunks[0] == @"get")
+    {
+        
+    }
+    if(chunks[0] == @"score")
+    {
+        
+    }
+    /*
     CLLocationCoordinate2D cord;
     NSString *lat = chunks[0];
     NSString *lon = chunks[1];
@@ -157,6 +189,7 @@
     Target *newTarget = [[Target alloc] initWithTitle:@"Capture Point" andCoordinate:cord];
     
     [self addTargetToMap:newTarget];
+     */
     
     
     

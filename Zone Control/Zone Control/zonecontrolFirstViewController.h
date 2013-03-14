@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) GCDAsyncSocket *asyncSocket;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) NSString *messageType;
 
 
 @end
