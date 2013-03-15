@@ -10,6 +10,8 @@
 #define METERS_PER_MILE 1609.344
 #import "Target.h"
 #import "GCDAsyncSocket.h"
+#import "CustomMapItem.h"
+#import "CustomAnnotationView.h"
 
 @interface zonecontrolFirstViewController ()
 
@@ -59,11 +61,16 @@
 
 -(void)addTargetToMap:(Target*)newTarget{
     [self removeAllAnnotations];
+    CustomMapItem *item = [[CustomMapItem alloc] init];
+    item.place = @"Tea Garden";
+    item.imageName = @"teagarden";
+    item.latitude = [NSNumber numberWithDouble:41.98763];
+    item.longitude = [NSNumber numberWithDouble:-91.657144];
     
     
+    [self.mapView addAnnotation: item];
+                            
     
-    [self.mapView addAnnotation:newTarget];
-
 }
 -(void)connectToServer
 {
@@ -117,6 +124,25 @@
     // We're just going to send a test string to the server.
     
     NSString *myStr = @"testing...123...\r\n";
+    
+    if(_messageType == @"get")
+    {
+        myStr = @"user*get\r\n";
+    
+    }
+    if(_messageType == @"confirm")
+    {
+        //need to get user location
+        myStr = [NSString stringWithFormat:@"user*confirm*%@*%@\r\n"];
+    
+    }
+    if(_messageType == @"score")
+    {
+        myStr = @"user*score\r\n";
+        
+    }
+    
+    
     NSData *myData = [myStr dataUsingEncoding:NSUTF8StringEncoding];
     
     [_asyncSocket writeData:myData withTimeout:5.0 tag:0];
@@ -159,4 +185,79 @@
 	NSLog(@"socket:%p didWriteDataWithTag:%ld", sock, tag);
 }
 
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
+{
+	NSLog(@"socket:%p didReadData:withTag:%ld", sock, tag);
+    
+    
+	NSString *httpResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+	NSLog(@"%@", httpResponse);
+    
+    
+    
+    NSArray *chunks = [httpResponse componentsSeparatedByString: @"*"];
+    
+    if(chunks[0] == @"confirm")
+    {
+        
+    }
+    if(chunks[0] == @"get")
+    {
+        
+    }
+    if(chunks[0] == @"score")
+    {
+        
+    }
+    /*
+    CLLocationCoordinate2D cord;
+    NSString *lat = chunks[0];
+    NSString *lon = chunks[1];
+    
+    cord.latitude = [lat doubleValue];
+    cord.longitude = [lon doubleValue];
+    
+    Target *newTarget = [[Target alloc] initWithTitle:@"Capture Point" andCoordinate:cord];
+    
+    [self addTargetToMap:newTarget];
+     */
+    
+    
+    
+}
+- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err
+{
+	NSLog(@"socketDidDisconnect:%p withError: %@", sock, err);
+	
+}
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag
+{
+	NSLog(@"socket:%p didWriteDataWithTag:%ld", sock, tag);
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // in case it's the user location, we already have an annotation, so just return nil
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // handle our three custom annotations
+    //
+        if ([annotation isKindOfClass:[CustomMapItem class]])  // for Japanese Tea Garden
+    {
+        static NSString *TeaGardenAnnotationIdentifier = @"TeaGardenAnnotationIdentifier";
+        
+        CustomAnnotationView *annotationView =
+        (CustomAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:TeaGardenAnnotationIdentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:TeaGardenAnnotationIdentifier];
+        }
+        return annotationView;
+    }
+    
+    return nil;
+}
 @end
+
