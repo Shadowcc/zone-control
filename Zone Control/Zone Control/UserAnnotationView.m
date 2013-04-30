@@ -1,7 +1,14 @@
+//
+//  UserAnnotationView.m
+//  Zone Control
+//
+//  Created by Scott Monroe on 4/5/13.
+//  Copyright (c) 2013 Scott Monroe. All rights reserved.
+//
 
+#import "UserAnnotationView.h"
+#import "UserMapItem.h"
 
-#import "CustomAnnotationView.h"
-#import "CustomMapItem.h"
 
 static CGFloat kMaxViewWidth = 50.0;
 
@@ -14,12 +21,12 @@ static CGFloat kTopMargin = 0;
 static CGFloat kBottomMargin = 0;
 static CGFloat kRoundBoxLeft = 10.0;
 
-@interface CustomAnnotationView ()
+@interface UserAnnotationView ()
 @property (nonatomic, strong) UILabel *annotationLabel;
 @property (nonatomic, strong) UIImageView *annotationImage;
 @end
 
-@implementation CustomAnnotationView
+@implementation UserAnnotationView
 
 // determine the MKAnnotationView based on the annotation info and reuseIdentifier
 //
@@ -31,16 +38,16 @@ static CGFloat kRoundBoxLeft = 10.0;
         self.backgroundColor = [UIColor clearColor];
         
         
-       
+        
         
         // add the annotation's label
         //_annotationLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        CustomMapItem *mapItem = (CustomMapItem *)self.annotation;
+        UserMapItem *mapItem = (UserMapItem *)self.annotation;
         //self.annotationLabel.font = [UIFont systemFontOfSize:9.0];
         //self.annotationLabel.textColor = [UIColor whiteColor];
         //self.annotationLabel.text = mapItem.place;
         [self.annotationLabel sizeToFit];   // get the right vertical size
-
+        
         // compute the optimum width of our annotation, based on the size of our annotation label
         CGFloat optimumWidth = self.annotationLabel.frame.size.width + kRightMargin + kLeftMargin;
         CGRect frame = self.frame;
@@ -66,10 +73,10 @@ static CGFloat kRoundBoxLeft = 10.0;
         _annotationImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:mapItem.imageName]];
         self.annotationImage.contentMode = UIViewContentModeScaleAspectFit;
         self.annotationImage.frame =
-            CGRectMake(kLeftMargin,
-                       self.annotationLabel.frame.origin.y + self.annotationLabel.frame.size.height + kTopMargin,
-                       self.frame.size.width - kRightMargin - kLeftMargin,
-                       self.frame.size.height - self.annotationLabel.frame.size.height - kTopMargin*2 - kBottomMargin);
+        CGRectMake(kLeftMargin,
+                   self.annotationLabel.frame.origin.y + self.annotationLabel.frame.size.height + kTopMargin,
+                   self.frame.size.width - kRightMargin - kLeftMargin,
+                   self.frame.size.height - self.annotationLabel.frame.size.height - kTopMargin*2 - kBottomMargin);
         [self addSubview:self.annotationImage];
     }
     
@@ -91,7 +98,7 @@ static CGFloat kRoundBoxLeft = 10.0;
 
 - (void)drawRect:(CGRect)rect
 {
-    CustomMapItem *mapItem = (CustomMapItem *)self.annotation;
+    UserMapItem *mapItem = (UserMapItem *)self.annotation;
     if (mapItem != nil)
     {
         [[UIColor darkGrayColor] setFill];
@@ -105,11 +112,12 @@ static CGFloat kRoundBoxLeft = 10.0;
         
         // draw the rounded box
         UIBezierPath *roundedRect =
-            [UIBezierPath bezierPathWithRoundedRect:
-                CGRectMake(kRoundBoxLeft, 0.0, self.frame.size.width - kRoundBoxLeft, self.frame.size.height) cornerRadius:3.0];
+        [UIBezierPath bezierPathWithRoundedRect:
+         CGRectMake(kRoundBoxLeft, 0.0, self.frame.size.width - kRoundBoxLeft, self.frame.size.height) cornerRadius:3.0];
         roundedRect.lineWidth = 2.0;
         [roundedRect fill];
     }
 }
 
 @end
+

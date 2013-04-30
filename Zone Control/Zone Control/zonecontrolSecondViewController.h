@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface zonecontrolSecondViewController : UIViewController
+@class GCDAsyncSocket;
+
+@interface zonecontrolSecondViewController : UICollectionViewController
+
+@property (strong, nonatomic) GCDAsyncSocket *asyncSocket;
 
 @end

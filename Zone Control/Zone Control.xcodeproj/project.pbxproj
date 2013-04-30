@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		1413275C16CD506C007B6207 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413275B16CD506C007B6207 /* Target.m */; };
+		14154441170DE129004494E2 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415443B170DE129004494E2 /* CustomAnnotationView.m */; };
+		14154442170DE129004494E2 /* CustomMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1415443D170DE129004494E2 /* CustomMapItem.m */; };
+		1421E77B170F2844006863D3 /* target.png in Resources */ = {isa = PBXBuildFile; fileRef = 1421E77A170F2844006863D3 /* target.png */; };
+		1421E77E170F2CF1006863D3 /* UserMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421E77D170F2CF1006863D3 /* UserMapItem.m */; };
+		1421E781170F2E0B006863D3 /* UserAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1421E780170F2E0B006863D3 /* UserAnnotationView.m */; };
+		1421E783170F3C57006863D3 /* android.png in Resources */ = {isa = PBXBuildFile; fileRef = 1421E782170F3C57006863D3 /* android.png */; };
 		14226F2716D3ED6D005C3A36 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */; };
 		145180B616D6946E00C046BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B516D6946E00C046BD /* Security.framework */; };
 		145180B916D6949000C046BD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145180B816D6949000C046BD /* CFNetwork.framework */; };
-		14E4B43716DD2F5F00265587 /* CustomMapItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4B43616DD2F5F00265587 /* CustomMapItem.m */; };
-		14E4B43A16DD2FEE00265587 /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */; };
-		14E4B43C16DD30CE00265587 /* teagarden.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E4B43B16DD30CE00265587 /* teagarden.png */; };
 		14FF226C16CABC6100B2AD72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226B16CABC6100B2AD72 /* UIKit.framework */; };
 		14FF226E16CABC6100B2AD72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226D16CABC6100B2AD72 /* Foundation.framework */; };
 		14FF227016CABC6100B2AD72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF226F16CABC6100B2AD72 /* CoreGraphics.framework */; };
@@ -25,26 +28,28 @@
 		14FF228216CABC6100B2AD72 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF228116CABC6100B2AD72 /* Default-568h@2x.png */; };
 		14FF228516CABC6100B2AD72 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14FF228316CABC6100B2AD72 /* MainStoryboard.storyboard */; };
 		14FF228816CABC6100B2AD72 /* zonecontrolFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF228716CABC6100B2AD72 /* zonecontrolFirstViewController.m */; };
-		14FF228A16CABC6100B2AD72 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF228916CABC6100B2AD72 /* first.png */; };
-		14FF228C16CABC6100B2AD72 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF228B16CABC6100B2AD72 /* first@2x.png */; };
-		14FF228F16CABC6100B2AD72 /* zonecontrolSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FF228E16CABC6100B2AD72 /* zonecontrolSecondViewController.m */; };
-		14FF229116CABC6100B2AD72 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF229016CABC6100B2AD72 /* second.png */; };
-		14FF229316CABC6100B2AD72 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14FF229216CABC6100B2AD72 /* second@2x.png */; };
 		14FF229A16CABDBE00B2AD72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FF229916CABDBE00B2AD72 /* MapKit.framework */; };
+		CE8893311721DFE700B46A26 /* scoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8893301721DFE700B46A26 /* scoreViewController.m */; };
+		CE8893361721E45700B46A26 /* ScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8893351721E45700B46A26 /* ScoreCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1413275A16CD506C007B6207 /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Target.h; sourceTree = "<group>"; };
 		1413275B16CD506C007B6207 /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Target.m; sourceTree = "<group>"; };
+		1415443A170DE129004494E2 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
+		1415443B170DE129004494E2 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
+		1415443C170DE129004494E2 /* CustomMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomMapItem.h; sourceTree = "<group>"; };
+		1415443D170DE129004494E2 /* CustomMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapItem.m; sourceTree = "<group>"; };
+		1421E77A170F2844006863D3 /* target.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = target.png; sourceTree = "<group>"; };
+		1421E77C170F2CF1006863D3 /* UserMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserMapItem.h; sourceTree = "<group>"; };
+		1421E77D170F2CF1006863D3 /* UserMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserMapItem.m; sourceTree = "<group>"; };
+		1421E77F170F2E0B006863D3 /* UserAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAnnotationView.h; sourceTree = "<group>"; };
+		1421E780170F2E0B006863D3 /* UserAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAnnotationView.m; sourceTree = "<group>"; };
+		1421E782170F3C57006863D3 /* android.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = android.png; sourceTree = "<group>"; };
 		14226F2516D3ED6D005C3A36 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		145180B516D6946E00C046BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		145180B816D6949000C046BD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		14E4B43516DD2F4200265587 /* CustomMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomMapItem.h; path = ../../../../Downloads/MapCallouts/Classes/CustomMapItem.h; sourceTree = "<group>"; };
-		14E4B43616DD2F5F00265587 /* CustomMapItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomMapItem.m; sourceTree = "<group>"; };
-		14E4B43816DD2FEE00265587 /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
-		14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
-		14E4B43B16DD30CE00265587 /* teagarden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teagarden.png; sourceTree = "<group>"; };
 		14FF226716CABC6100B2AD72 /* Zone Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Zone Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14FF226B16CABC6100B2AD72 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		14FF226D16CABC6100B2AD72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,13 +66,11 @@
 		14FF228416CABC6100B2AD72 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		14FF228616CABC6100B2AD72 /* zonecontrolFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zonecontrolFirstViewController.h; sourceTree = "<group>"; };
 		14FF228716CABC6100B2AD72 /* zonecontrolFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zonecontrolFirstViewController.m; sourceTree = "<group>"; };
-		14FF228916CABC6100B2AD72 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		14FF228B16CABC6100B2AD72 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		14FF228D16CABC6100B2AD72 /* zonecontrolSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zonecontrolSecondViewController.h; sourceTree = "<group>"; };
-		14FF228E16CABC6100B2AD72 /* zonecontrolSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = zonecontrolSecondViewController.m; sourceTree = "<group>"; };
-		14FF229016CABC6100B2AD72 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		14FF229216CABC6100B2AD72 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		14FF229916CABDBE00B2AD72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CE88932F1721DFE700B46A26 /* scoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scoreViewController.h; sourceTree = "<group>"; };
+		CE8893301721DFE700B46A26 /* scoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scoreViewController.m; sourceTree = "<group>"; };
+		CE8893341721E45700B46A26 /* ScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreCell.h; sourceTree = "<group>"; };
+		CE8893351721E45700B46A26 /* ScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,26 +123,29 @@
 		14FF227116CABC6100B2AD72 /* Zone Control */ = {
 			isa = PBXGroup;
 			children = (
-				14E4B43B16DD30CE00265587 /* teagarden.png */,
-				14E4B43816DD2FEE00265587 /* CustomAnnotationView.h */,
-				14E4B43916DD2FEE00265587 /* CustomAnnotationView.m */,
-				14E4B43616DD2F5F00265587 /* CustomMapItem.m */,
-				14E4B43516DD2F4200265587 /* CustomMapItem.h */,
+				1421E77A170F2844006863D3 /* target.png */,
+				1421E77F170F2E0B006863D3 /* UserAnnotationView.h */,
+				1421E780170F2E0B006863D3 /* UserAnnotationView.m */,
+				1415443A170DE129004494E2 /* CustomAnnotationView.h */,
+				1415443B170DE129004494E2 /* CustomAnnotationView.m */,
+				1421E77C170F2CF1006863D3 /* UserMapItem.h */,
+				1421E77D170F2CF1006863D3 /* UserMapItem.m */,
+				1415443C170DE129004494E2 /* CustomMapItem.h */,
+				1415443D170DE129004494E2 /* CustomMapItem.m */,
 				14FF227A16CABC6100B2AD72 /* zonecontrolAppDelegate.h */,
 				14FF227B16CABC6100B2AD72 /* zonecontrolAppDelegate.m */,
 				14FF228316CABC6100B2AD72 /* MainStoryboard.storyboard */,
 				1413275A16CD506C007B6207 /* Target.h */,
 				1413275B16CD506C007B6207 /* Target.m */,
+				CE88932F1721DFE700B46A26 /* scoreViewController.h */,
+				CE8893301721DFE700B46A26 /* scoreViewController.m */,
+				CE8893341721E45700B46A26 /* ScoreCell.h */,
+				CE8893351721E45700B46A26 /* ScoreCell.m */,
 				14FF228616CABC6100B2AD72 /* zonecontrolFirstViewController.h */,
 				14FF228716CABC6100B2AD72 /* zonecontrolFirstViewController.m */,
-				14FF228916CABC6100B2AD72 /* first.png */,
-				14FF228B16CABC6100B2AD72 /* first@2x.png */,
-				14FF228D16CABC6100B2AD72 /* zonecontrolSecondViewController.h */,
-				14FF228E16CABC6100B2AD72 /* zonecontrolSecondViewController.m */,
+				1421E782170F3C57006863D3 /* android.png */,
 				14226F2516D3ED6D005C3A36 /* GCDAsyncSocket.h */,
 				14226F2616D3ED6D005C3A36 /* GCDAsyncSocket.m */,
-				14FF229016CABC6100B2AD72 /* second.png */,
-				14FF229216CABC6100B2AD72 /* second@2x.png */,
 				14FF227216CABC6100B2AD72 /* Supporting Files */,
 			);
 			path = "Zone Control";
@@ -216,11 +222,8 @@
 				14FF228016CABC6100B2AD72 /* Default@2x.png in Resources */,
 				14FF228216CABC6100B2AD72 /* Default-568h@2x.png in Resources */,
 				14FF228516CABC6100B2AD72 /* MainStoryboard.storyboard in Resources */,
-				14FF228A16CABC6100B2AD72 /* first.png in Resources */,
-				14FF228C16CABC6100B2AD72 /* first@2x.png in Resources */,
-				14FF229116CABC6100B2AD72 /* second.png in Resources */,
-				14FF229316CABC6100B2AD72 /* second@2x.png in Resources */,
-				14E4B43C16DD30CE00265587 /* teagarden.png in Resources */,
+				1421E77B170F2844006863D3 /* target.png in Resources */,
+				1421E783170F3C57006863D3 /* android.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +237,14 @@
 				14FF227816CABC6100B2AD72 /* main.m in Sources */,
 				14FF227C16CABC6100B2AD72 /* zonecontrolAppDelegate.m in Sources */,
 				14FF228816CABC6100B2AD72 /* zonecontrolFirstViewController.m in Sources */,
-				14FF228F16CABC6100B2AD72 /* zonecontrolSecondViewController.m in Sources */,
 				1413275C16CD506C007B6207 /* Target.m in Sources */,
 				14226F2716D3ED6D005C3A36 /* GCDAsyncSocket.m in Sources */,
-				14E4B43716DD2F5F00265587 /* CustomMapItem.m in Sources */,
-				14E4B43A16DD2FEE00265587 /* CustomAnnotationView.m in Sources */,
+				14154441170DE129004494E2 /* CustomAnnotationView.m in Sources */,
+				14154442170DE129004494E2 /* CustomMapItem.m in Sources */,
+				1421E77E170F2CF1006863D3 /* UserMapItem.m in Sources */,
+				1421E781170F2E0B006863D3 /* UserAnnotationView.m in Sources */,
+				CE8893311721DFE700B46A26 /* scoreViewController.m in Sources */,
+				CE8893361721E45700B46A26 /* ScoreCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

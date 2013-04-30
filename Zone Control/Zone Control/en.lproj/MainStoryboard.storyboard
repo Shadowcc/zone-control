@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Zonecontrol First View Controller - First-->
@@ -31,7 +31,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-za-tHc"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u1I-za-tHc"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-oI-z5D">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -61,38 +61,13 @@
                     <tabBarItem key="tabBarItem" title="Map" image="first" id="7"/>
                     <connections>
                         <outlet property="mapView" destination="u1I-za-tHc" id="Qet-NJ-q10"/>
+                        <outlet property="pingButton" destination="VTi-p2-Dz7" id="ZFx-TJ-cJP"/>
+                        <outlet property="score" destination="dbn-CF-pbU" id="F03-oG-c0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="653" y="-138"/>
-        </scene>
-        <!--Zonecontrol Second View Controller - Second-->
-        <scene sceneID="13">
-            <objects>
-                <viewController title="Second" id="3" customClass="zonecontrolSecondViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="fdd-qm-EfT">
-                                <items>
-                                    <barButtonItem title="Item" id="wP8-ew-9Wh"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fdd-qm-EfT" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="KTX-uh-b5V"/>
-                            <constraint firstItem="fdd-qm-EfT" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="SPP-ZU-OZm"/>
-                            <constraint firstItem="fdd-qm-EfT" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="UIl-ca-wgI"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Scoreboard" image="second" id="6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="653" y="498"/>
+            <point key="canvasLocation" x="658" y="-139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -106,17 +81,84 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
+                        <segue destination="BVv-P7-hON" kind="relationship" relationship="viewControllers" id="Kji-Uc-VZx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
+        <!--Score View Controller - Leader Boards-->
+        <scene sceneID="aUD-yo-Hg0">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="BVv-P7-hON" customClass="scoreViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="zqF-0e-min">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0058070043760697528" green="0.07466726854055121" blue="0.85326086960000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YPP-W5-UCL">
+                            <size key="itemSize" width="77" height="97"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="scorebox" id="3e8-Xy-qNZ" customClass="ScoreCell">
+                                <rect key="frame" x="0.0" y="0.0" width="77" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="77" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KA0-8w-kmk">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.85326086960000003" green="0.020002109680000001" blue="0.060256518170000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0s-ni-DvX">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="52" id="7P8-Zg-jMd"/>
+                                                <constraint firstAttribute="height" constant="50" id="acA-zu-3dM"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsn-Wq-FCT">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.14622293192971036" green="0.85326086960000003" blue="0.13192599958243337" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="wsn-Wq-FCT" firstAttribute="leading" secondItem="3e8-Xy-qNZ" secondAttribute="leading" constant="20" type="default" id="0kS-hP-h7y"/>
+                                    <constraint firstItem="wsn-Wq-FCT" firstAttribute="top" secondItem="3e8-Xy-qNZ" secondAttribute="top" type="default" id="8g5-JR-p8M"/>
+                                    <constraint firstItem="j0s-ni-DvX" firstAttribute="centerX" secondItem="KA0-8w-kmk" secondAttribute="centerX" type="default" id="QGG-6x-1YV"/>
+                                    <constraint firstAttribute="bottom" secondItem="KA0-8w-kmk" secondAttribute="bottom" constant="6" id="Znb-3G-Vyb"/>
+                                    <constraint firstItem="j0s-ni-DvX" firstAttribute="top" secondItem="3e8-Xy-qNZ" secondAttribute="top" constant="20" type="default" id="fv2-ag-bkH"/>
+                                    <constraint firstItem="KA0-8w-kmk" firstAttribute="centerX" secondItem="3e8-Xy-qNZ" secondAttribute="centerX" type="default" id="lCC-9K-JSd"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="avatar" destination="j0s-ni-DvX" id="XfG-6E-TvL"/>
+                                    <outlet property="scoreLabel" destination="KA0-8w-kmk" id="T2m-G9-qfU"/>
+                                    <outlet property="userLabel" destination="wsn-Wq-FCT" id="SGd-ii-XMO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="BVv-P7-hON" id="0eV-ka-bMX"/>
+                            <outlet property="delegate" destination="BVv-P7-hON" id="MvG-Nv-idC"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Leader Boards" id="mkp-uD-Ckq"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EOj-yC-Fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="639" y="508"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
-        <image name="second" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

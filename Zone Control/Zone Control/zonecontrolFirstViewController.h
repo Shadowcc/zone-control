@@ -8,20 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+
+
 
 @class GCDAsyncSocket;
 
 
 
-@interface zonecontrolFirstViewController : UIViewController
+@interface zonecontrolFirstViewController : UIViewController <MKMapViewDelegate>
 {
-    //GCDAsyncSocket *asyncSocket;
+    
     
 }
 
+
+@property (weak, nonatomic) IBOutlet UILabel *score;
 @property (strong, nonatomic) GCDAsyncSocket *asyncSocket;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) NSString *messageType;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *pingButton;
+
+
+
 
 
 @end
