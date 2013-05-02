@@ -98,7 +98,7 @@
     
     
     NSError *err = nil;
-    if((![_asyncSocketA connectToHost:@"192.168.0.7" onPort:8001 error:&err]))
+    if((![_asyncSocketA connectToHost:@"172.16.14.80" onPort:8001 error:&err]))
     {
         NSLog(@"Error connecting: %@",	 err);
         
